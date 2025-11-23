@@ -7,7 +7,7 @@ import base64
 
 class CommunicaAI:
     def __init__(self):
-        self.API_KEY = st.secrets.get("WATSON_API_KEY", "ApiKey-29b2c13f-14f4-436a-92c2-bfe5dcc7f8ff")
+        self.API_KEY = st.secrets.get("WATSON_API_KEY", "29b2c13f-14f4-436a-92c2-bfe5dcc7f8ff")
         self.SCORING_URL = "https://us-south.ml.cloud.ibm.com/ml/v4/deployments/9a25c432-dafa-4c43-b2ce-2eabd6aec8e5/ai_service_stream?version=2021-05-01"
         self.access_token = None
         self.is_connected = False
