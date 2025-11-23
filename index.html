@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CommunicaAI Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="communica-container">
+        <!-- Sidebar Navigation -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="communica-logo">CAI</div>
+                <div class="sidebar-title">CommunicaAI</div>
+            </div>
+            
+            <div class="nav-section">
+                <div class="nav-title">AI ASSISTANT</div>
+                <a href="#" class="nav-item active">
+                    <div class="nav-icon">💬</div>
+                    <span>Chat</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <div class="nav-icon">⚙️</div>
+                    <span>Settings</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <div class="nav-icon">📊</div>
+                    <span>Analytics</span>
+                </a>
+            </div>
+            
+            <div class="nav-section">
+                <div class="nav-title">CAPABILITIES</div>
+                <a href="#" class="nav-item">
+                    <div class="nav-icon">🔊</div>
+                    <span>Voice Synthesis</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <div class="nav-icon">🌐</div>
+                    <span>Multi-language</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <div class="nav-icon">📝</div>
+                    <span>Content Creation</span>
+                </a>
+            </div>
+            
+            <div class="nav-section">
+                <div class="nav-title">TOOLS</div>
+                <a href="#" class="nav-item">
+                    <div class="nav-icon">🛠️</div>
+                    <span>API Console</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <div class="nav-icon">📚</div>
+                    <span>Documentation</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="content-header">
+                <h1 class="content-title">CommunicaAI Assistant</h1>
+                <div class="content-subtitle">Advanced communication AI powered by IBM watsonx.ai</div>
+            </div>
+            
+            <div class="chat-container">
+                <!-- Status Indicator -->
+                <div class="status-indicator" id="statusIndicator">
+                    <div class="status-dot connecting" id="statusDot"></div>
+                    <span id="statusText">Initializing CommunicaAI...</span>
+                </div>
+                
+                <!-- API Key Section -->
+                <div class="api-key-section" id="apiKeySection">
+                    <h3>API Configuration</h3>
+                    <p>Current API Key: <span id="apiKeyDisplay">••••••••••••••••</span></p>
+                    <button class="api-key-toggle" id="toggleApiKey">Show API Key</button>
+                    <div id="apiKeyInputContainer" style="display: none; margin-top: 10px;">
+                        <input type="text" id="apiKeyInput" placeholder="Enter your IBM Watson API Key" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                        <button id="updateApiKey" style="margin-top: 10px; padding: 8px 16px; background: #0062ff; color: white; border: none; border-radius: 4px; cursor: pointer;">Update API Key</button>
+                    </div>
+                </div>
+                
+                <!-- Chat Messages -->
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be dynamically loaded from API -->
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="quick-actions" id="quickActions">
+                    <!-- Quick actions will be dynamically loaded from API -->
+                </div>
+                
+                <!-- Typing Indicator -->
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="message-avatar assistant-avatar">AI</div>
+                    <div class="typing-dots">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+                
+                <!-- Input Area -->
+                <div class="input-container">
+                    <div class="input-area">
+                        <div class="text-input-container">
+                            <textarea 
+                                class="text-input" 
+                                id="userInput" 
+                                placeholder="Ask CommunicaAI anything about communication, content creation, or language..." 
+                                rows="1"
+                                maxlength="1000"
+                            ></textarea>
+                            <div class="char-counter" id="charCounter">0/1000</div>
+                        </div>
+                        <button class="send-button" id="sendButton">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M2.5 2.5L17.5 10L2.5 17.5L5 10L2.5 2.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="input-actions">
+                        <button class="action-button" id="clearChat">Clear chat</button>
+                        <button class="action-button" id="exportChat">Export conversation</button>
+                        <button class="action-button" id="voiceInput">🎤 Voice input</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
