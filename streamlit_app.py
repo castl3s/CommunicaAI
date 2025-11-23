@@ -21,7 +21,7 @@ class CommunicaAI:
                     "Content-Type": "application/x-www-form-urlencoded",
                     "Accept": "application/json"
                 },
-                data=f"grant_type=urn:ibm:params:oauth:grant-type:apikey&apikey={self.API_KEY}"
+                data="grant_type=urn:ibm:params:oauth:grant-type:apikey&apikey={self.API_KEY}"
             )
             
             if response.status_code == 200:
